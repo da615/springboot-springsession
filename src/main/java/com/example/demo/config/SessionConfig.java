@@ -1,15 +1,11 @@
 package com.example.demo.config;
 
-
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration;
 import org.springframework.session.web.http.DefaultCookieSerializer;
 
-/**等同于Spring的application.xml文件
- * */
-@Configuration
-class SsessionConfig {
+public class SessionConfig {
+
     /** <!--Spring session的配置类-->
      *  <bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration">
      *       <property name="maxInactiveIntervalInseconds" value="3600"/>
@@ -50,4 +46,5 @@ class SsessionConfig {
         defaultCookieSerializer.setDomainName("127.0.0.1");
         return defaultCookieSerializer;
     }
+
 }
